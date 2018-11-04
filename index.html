@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Hackaroo 2018 Fall</title>
+
+    <!-- Bootstrap core CSS-->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Page level plugin CSS-->
+    <link href="vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="index.html">Prescription Drug Claims Analysis</a>
+
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+        <i class="fas fa-bars"></i>
+      </button>
+    </nav>
+
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+      <ul class="sidebar navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-fw fa-folder"></i>
+            <span>Visualization-State</span>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <h6 class="dropdown-header">Amount Reimbursed:</h6>
+            <a class="dropdown-item" href="web/amount_reimbursed2018.html">2018</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2017.html">2017</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2016.html">2016</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2015.html">2015</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2014.html">2014</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2013.html">2013</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2012.html">2012</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2011.html">2011</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2010.html">2010</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2009.html">2009</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2008.html">2008</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2007.html">2007</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2006.html">2006</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2005.html">2005</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2004.html">2004</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2003.html">2003</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2002.html">2002</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2001.html">2001</a>
+            <a class="dropdown-item" href="web/amount_reimbursed2000.html">2000</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1999.html">1999</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1998.html">1998</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1997.html">1997</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1996.html">1996</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1995.html">1995</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1994.html">1994</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1993.html">1993</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1992.html">1992</a>
+            <a class="dropdown-item" href="web/amount_reimbursed1991.html">1991</a>
+
+
+          </div>
+        </li>
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" href="charts.html">
+            <i class="fas fa-fw fa-chart-area"></i>
+            <span>Charts</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="tables.html">
+            <i class="fas fa-fw fa-table"></i>
+            <span>Tables</span></a>
+        </li>
+      -->
+      </ul>
+
+      <div id="content-wrapper">
+
+        <div class="container-fluid">
+
+          <!-- Breadcrumbs-->
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Overview</li>
+          </ol>
+
+          <!-- Area Chart 1 Example-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-chart-area"></i>
+              Total Unit Reimburshed</div>
+            <div class="card-body">
+              <canvas id="myAreaChart" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated 11/4/2018 at 2:00 PM</div>
+          </div>
+
+          <!-- Area Chart 2 Example-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-chart-area"></i>
+              Total Amount Reimburshed</div>
+            <div class="card-body">
+              <canvas id="myAreaChart2" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated 11/4/2018 at 2:00 PM</div>
+          </div>
+          
+          <!-- Area Chart 3 Example-->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-chart-area"></i>
+              Total Unit Pricription</div>
+            <div class="card-body">
+              <canvas id="myAreaChart3" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Updated 11/4/2018 at 2:00 PM</div>
+          </div>
+          
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="card mb-3">
+                <div class="card-header">
+                  <i class="fas fa-chart-bar"></i>
+                  Bar Chart of Medicine Used in year 2013, 2014 and 2015</div>
+                <div class="card-body">
+                  <canvas id="myBarChart" width="100%" height="50"></canvas>
+                </div>
+                <div class="card-footer small text-muted">Updated 11/4/2018 at 2:00 PM</div>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="card mb-3">
+                <div class="card-header">
+                  Map</div>
+                <div class="card-body">
+                  <img src="img/map.jpg" style="width:320px;height:320px;">
+                </div>
+                <div class="card-footer small text-muted">Updated 11/4/2018 at 2:00 PM</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DataTables Example -->
+          <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+              Combined dataset by years</div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Year</th>
+                      <th>Total Units Reimbursed (Million Units)</th>
+                      <th>Total Amount Reimbursed (Million USD)</th>
+                      <th>Total Units Prescription (Million Units)</th>
+                    </tr>
+                  </thead>
+                  
+                  <tbody>
+                    <tr>
+                      <td>2018</td>
+                      <td>21632.86</td>
+                      <td>$ 27901.92</td>
+                      <td>338.69</td>
+                    </tr>
+                    <tr>
+                      <td>2017</td>
+                      <td>46127.56</td>
+                      <td>$ 62057.25</td>
+                      <td>740.96</td>
+                    </tr>
+                    <tr>
+                      <td>2016</td>
+                      <td>44153.96</td>
+                      <td>$ 60012.03</td>
+                      <td>728.95</td>
+                    </tr>
+                    <tr>
+                      <td>2015</td>
+                      <td>41640.9</td>
+                      <td>$ 54122.57</td>
+                      <td>685.59</td>
+                    </tr>
+                    <tr>
+                      <td>2014</td>
+                      <td>36309.03</td>
+                      <td>$ 45535.96</td>
+                      <td>610.96</td>
+                    </tr>
+                    <tr>
+                      <td>2013</td>
+                      <td>33476.76</td>
+                      <td>$ 36713.1</td>
+                      <td>547.22</td>
+                    </tr>
+                    <tr>
+                      <td>2012</td>
+                      <td>33474.86</td>
+                      <td>$ 37165.39</td>
+                      <td>553.7</td>
+                    </tr>
+                    <tr>
+                      <td>2011</td>
+                      <td>33388.64</td>
+                      <td>$ 37214.96</td>
+                      <td>537.42</td>
+                    </tr>
+
+                    <tr>
+                      <td>2010</td>
+                      <td>29903.35</td>
+                      <td>$ 32873.8</td>
+                      <td>474.47</td>
+                    </tr>
+                    <tr>
+                      <td>2009</td>
+                      <td>22560.47</td>
+                      <td>$ 26026.14</td>
+                      <td>345.92</td>
+                    </tr>
+                    <tr>
+                      <td>2008</td>
+                      <td>21540.45</td>
+                      <td>$ 24706.47</td>
+                      <td>321.22</td>
+                    </tr>
+                    <tr>
+                      <td>2007</td>
+                      <td>20804.97</td>
+                      <td>$ 37118.5</td>
+                      <td>3041.38</td>
+                    </tr>
+                    <tr>
+                      <td>2006</td>
+                      <td>22461.88</td>
+                      <td>$ 150195.35</td>
+                      <td>6182.43</td>
+                    </tr>
+                    <tr>
+                      <td>2005</td>
+                      <td>39706.17</td>
+                      <td>$ 61884.24</td>
+                      <td>1166.36</td>
+                    </tr>
+                    <tr>
+                      <td>2004</td>
+                      <td>38557.98</td>
+                      <td>$ 60943.17</td>
+                      <td>1132.09</td>
+                    </tr>
+                    <tr>
+                      <td>2003</td>
+                      <td>37753.14</td>
+                      <td>$ 45209.98</td>
+                      <td>796.98</td>
+                    </tr>
+                    <tr>
+                      <td>2002</td>
+                      <td>34339.79</td>
+                      <td>$ 29825.98</td>
+                      <td>524.51</td>
+                    </tr>
+                    <tr>
+                      <td>2001</td>
+                      <td>31407.19</td>
+                      <td>$ 25078.24</td>
+                      <td>473.4</td>
+                    </tr>
+                    <tr>
+                      <td>2000</td>
+                      <td>27594.32</td>
+                      <td>$ 19940.75</td>
+                      <td>413.64</td>
+                    </tr>
+                    <tr>
+                      <td>1999</td>
+                      <td>26713.83</td>
+                      <td>$ 16289.71</td>
+                      <td>372.32</td>
+                    </tr>
+                    <tr>
+                      <td>1998</td>
+                      <td>24842.66</td>
+                      <td>$ 13271.7</td>
+                      <td>341.13</td>
+                    </tr>
+                    <tr>
+                      <td>1997</td>
+                      <td>19847.28</td>
+                      <td>$ 9008.22</td>
+                      <td>264.57</td>
+                    </tr>
+                    <tr>
+                      <td>1996</td>
+                      <td>25498.09</td>
+                      <td>$ 9995.92</td>
+                      <td>332.7</td>
+                    </tr>
+                    <tr>
+                      <td>1995</td>
+                      <td>25467.28</td>
+                      <td>$ 8753.14</td>
+                      <td>321.6</td>
+                    </tr>
+                    <tr>
+                      <td>1994</td>
+                      <td>25829.13</td>
+                      <td>$ 8185.93</td>
+                      <td>323.23</td>
+                    </tr>
+                    <tr>
+                      <td>1993</td>
+                      <td>28254.64</td>
+                      <td>$ 7858.9</td>
+                      <td>334.21</td>
+                    </tr>
+                    <tr>
+                      <td>1992</td>
+                      <td>28946.03</td>
+                      <td>$ 6451.99</td>
+                      <td>298.16</td>
+                    </tr>
+                    <tr>
+                      <td>1991</td>
+                      <td>25683.42</td>
+                      <td>$ 4710.52</td>
+                      <td>237.9</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="card-footer small text-muted">Updated 11/4/2018 at 2:00 PM</div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Created for Hackaroo 2018 Fall</span>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+      <!-- /.content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-area-demo2.js"></script>
+    <script src="js/demo/chart-area-demo3.js"></script>
+    <script src="js/demo/chart-bar-demo.js"></script>
+
+  </body>
+
+</html>
