@@ -1,8 +1,12 @@
 # Prescription Drug Claims Analysis
 
+# Team: Outliers
+
 Website: https://parasmaharjan.github.io/Prescription-drug-claims-analysis/
 
 Github: https://github.com/parasmaharjan/Prescription-drug-claims-analysis
+
+Youtube: https://www.youtube.com/watch?v=XawlMEl2NGM
 
 ## Tools used:
 
