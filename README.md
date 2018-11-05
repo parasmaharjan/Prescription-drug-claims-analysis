@@ -11,6 +11,7 @@ Github: https://github.com/parasmaharjan/Prescription-drug-claims-analysis
 * Tableau
 * Excel
 * HTML, CSS and JS
+* XAMPP server
 
 ## Requirements:
 * pandas `pip3 install pandas`
