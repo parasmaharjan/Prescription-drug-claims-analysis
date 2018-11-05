@@ -10,7 +10,7 @@ Youtube: https://www.youtube.com/watch?v=XawlMEl2NGM
 
 ## Tools used:
 
-* Python
+* Python3
 * MATLAB
 * Tableau
 * Excel
@@ -22,5 +22,6 @@ Youtube: https://www.youtube.com/watch?v=XawlMEl2NGM
 * plotly `pip3 install plotly`
 * MATLAB Neural Network library
 
-
+## Datasets:
+* https://www.medicaid.gov/medicaid/prescription-drugs/state-drug-utilization-data/index.html
 
